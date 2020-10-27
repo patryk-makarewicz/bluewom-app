@@ -1,3 +1,12 @@
 .list {
-    list-style-type: none;
+  list-style-type: none;
+
+  &Item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input:checked + p {
+  text-decoration: line-through;
 }
