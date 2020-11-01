@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyle';
-import Fetch from 'components/Fetch/Fetch';
+import Rates from 'views/Rates';
 import { Provider } from 'react-redux';
 import store from 'store';
 
@@ -15,7 +15,7 @@ const Root = () => (
     <div>
       <GlobalStyle />
       <MyHeader>Add to favorite</MyHeader>
-      <Fetch />
+      <Rates />
     </div>
   </Provider>
 );

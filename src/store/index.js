@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import currencyData from 'reducers';
+import rootReducer from 'reducers';
 
-const store = createStore(currencyData);
+const store = createStore(rootReducer);
 
 export default store;

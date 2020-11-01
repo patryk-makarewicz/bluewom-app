@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
 const Fetch = () => {
   const [hasError, setErrors] = useState(false);
@@ -25,4 +26,7 @@ const Fetch = () => {
     </div>
   );
 };
-export default Fetch;
+
+const mapStateToProps = ({ currency }) => ({ currency });
+
+export default connect(mapStateToProps)(Fetch);
