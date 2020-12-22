@@ -1,8 +1,7 @@
-![cover](./public/cover.png)
 
 # General info
 
-In construction - this is the app for Bluewom.
+In construction - this is an app for checking the value of your favorite currencies.
 <br />
 
 ## Getting Started with Create React App
