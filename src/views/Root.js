@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyle';
+import CurrencyList from 'components/CurrencyList';
 
 const MyHeader = styled.header`
   font-size: calc(16px + 2vmin);
@@ -10,7 +11,8 @@ const MyHeader = styled.header`
 const Root = () => (
   <div>
     <GlobalStyle />
-    <MyHeader>Add to favorite</MyHeader>
+    <MyHeader>List of Your favorite currencies</MyHeader>
+    <CurrencyList />
   </div>
 );
 
