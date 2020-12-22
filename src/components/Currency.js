@@ -4,7 +4,7 @@ const Currency = ({ currency, code, mid }) => {
   return (
     <div>
       <p>
-        {currency} {code} {mid}{' '}
+        {currency} {code} {mid}
       </p>
     </div>
   );

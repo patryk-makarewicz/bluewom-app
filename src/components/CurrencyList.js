@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// import Currency from './Currency';
+import Currency from './Currency';
 
 const CurrencyList = () => {
   const [currencies, setCurrencies] = useState([]);
@@ -16,18 +16,12 @@ const CurrencyList = () => {
     );
   }, []);
 
-  console.log(currencies);
-
   return (
     <>
       {currencies ? (
         <div>
           {currencies.map((data) => (
-            <div key={data.code}>
-              <p>
-                {data.currency} {data.code} {data.mid}
-              </p>
-            </div>
+            <Currency key={data.code} currency={data.currency} code={data.code} mid={data.mid} />
           ))}
         </div>
       ) : (
