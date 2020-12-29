@@ -3,9 +3,7 @@ import React from 'react';
 const Currency = ({ currency, code, mid }) => {
   return (
     <div>
-      <p>
-        {currency} {code} {mid}
-      </p>
+      {currency} {code} {mid}
     </div>
   );
 };
