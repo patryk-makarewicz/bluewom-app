@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Currency = ({ currency, code, mid }) => {
+const Currency = ({ currency, code, mid, addEntry }) => {
   return (
     <div>
-      {currency} {code} {mid}
+      <div>{currency}</div>
+      <button type="button" id={[currency, code, mid]} onClick={addEntry}>
+        +
+      </button>
     </div>
   );
 };

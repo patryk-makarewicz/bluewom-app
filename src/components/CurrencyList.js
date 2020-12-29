@@ -11,6 +11,12 @@ const CurrencyList = () => {
     setFav([...fav, e.target.id]);
   };
 
+  const removeEntry = (e) => {
+    setFav(...fav, fav - e.target.id);
+  };
+
+  console.log(fav);
+
   useEffect(() => {
     // eslint-disable-next-line no-undef
     fetch('http://api.nbp.pl/api/exchangerates/tables/A/').then((response) =>
@@ -34,10 +40,8 @@ const CurrencyList = () => {
                   currency={data.currency}
                   code={data.code}
                   mid={data.mid}
+                  addEntry={addEntry}
                 />
-                <button type="button" id={data.code} onClick={addEntry}>
-                  +
-                </button>
               </>
             ))}
           </div>
@@ -53,20 +57,14 @@ const CurrencyList = () => {
         <div>
           <>
             {fav.map((favItem) => (
-              <>
-                <div
-                  key={favItem.code}
-                  id={favItem.code}
-                  currency={favItem.currency}
-                  code={favItem.code}
-                  mid={favItem.mid}
-                >
+              <div>
+                <div key={favItem} id={favItem}>
                   {favItem}
                 </div>
-                <button type="button" id={favItem.code} onClick={addEntry}>
+                <button type="button" id={favItem} onClick={removeEntry}>
                   -
                 </button>
-              </>
+              </div>
             ))}
           </>
         </div>
