@@ -11,8 +11,8 @@ const CurrencyList = () => {
     setFav([...fav, e.target.id]);
   };
 
-  const removeEntry = (e) => {
-    setFav(...fav, fav - e.target.id);
+  const clearList = () => {
+    setFav([]);
   };
 
   console.log(fav);
@@ -56,17 +56,17 @@ const CurrencyList = () => {
         <p>FavList</p>
         <div>
           <>
-            {fav.map((favItem) => (
+            {fav.map((favItem, index) => (
               <div>
-                <div key={favItem} id={favItem}>
+                <div key={favItem} id={index}>
                   {favItem}
                 </div>
-                <button type="button" id={favItem} onClick={removeEntry}>
-                  -
-                </button>
               </div>
             ))}
           </>
+          <button type="button" onClick={clearList}>
+            Clear
+          </button>
         </div>
       </div>
     </>
