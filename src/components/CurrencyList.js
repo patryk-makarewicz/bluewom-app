@@ -1,17 +1,18 @@
-/* eslint-disable no-undef */
-import React, { useState } from 'react';
+import React from 'react';
 
 import Currency from './Currency';
 
 import styles from './CurrencyList.module.scss';
 
-const CurrencyList = ({ currencies, error }) => {
-  const [fav, setFav] = useState([]);
+const CurrencyList = ({ currencies, error, handleAdd }) => {
+  // const addToFav = (e) => handleAdd(e.target.id);
+  // const [fav, setFav] = useState([]);
 
-  const handleAdd = (e) => {
-    setFav([...fav, e.target.id]);
-  };
+  // const handleAdd = (e) => {
+  //   setFav(e.target.id);
+  // };
 
+  // console.log(fav);
   // const clearList = () => {
   //   setFav([]);
   // };
@@ -23,13 +24,16 @@ const CurrencyList = ({ currencies, error }) => {
         {currencies ? (
           <div>
             {currencies.map((data) => (
-              <Currency
-                key={data.code}
-                code={data.code}
-                currency={data.currency}
-                mid={data.mid}
-                handleAdd={handleAdd}
-              />
+              <>
+                <Currency
+                  key={data.code}
+                  id={data.code}
+                  code={data.code}
+                  currency={data.currency}
+                  mid={data.mid}
+                  handleAdd={handleAdd}
+                />
+              </>
             ))}
           </div>
         ) : (

@@ -7,6 +7,12 @@ import FavoritesList from './FavortitesList';
 const Fetch = () => {
   const [currencies, setCurrencies] = useState([]);
   const [error, setError] = useState(false);
+  const [fav, setFav] = useState([]);
+
+  const handleAdd = (e) => {
+    setFav(e.target.id);
+  };
+  console.log(fav);
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
@@ -20,8 +26,8 @@ const Fetch = () => {
 
   return (
     <div className={styles.wrapper}>
-      <CurrencyList currencies={currencies} error={error} />
-      <FavoritesList />
+      <CurrencyList currencies={currencies} error={error} handleAdd={handleAdd} />
+      <FavoritesList fav={fav} />
     </div>
   );
 };

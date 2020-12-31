@@ -6,7 +6,7 @@ const Currency = ({ currency, code, mid, handleAdd }) => {
       <div>{code}</div>
       <div>{currency}</div>
       <div>{mid}</div>
-      <button type="button" onClick={handleAdd}>
+      <button type="button" id={code} onClick={handleAdd}>
         +
       </button>
     </div>
