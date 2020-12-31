@@ -1,48 +1,35 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-undef */
+import React, { useState } from 'react';
 
 import Currency from './Currency';
 
-const CurrencyList = () => {
-  const [fav, setFav] = useState([]);
-  const [currencies, setCurrencies] = useState([]);
-  const [error, setError] = useState(false);
+import styles from './CurrencyList.module.scss';
 
-  const addEntry = (e) => {
+const CurrencyList = ({ currencies, error }) => {
+  const [fav, setFav] = useState([]);
+
+  const handleAdd = (e) => {
     setFav([...fav, e.target.id]);
   };
 
-  const clearList = () => {
-    setFav([]);
-  };
-
-  console.log(fav);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    fetch('http://api.nbp.pl/api/exchangerates/tables/A/').then((response) =>
-      response
-        .json()
-        .then((res) => setCurrencies(res[0].rates))
-        .catch(() => setError(true)),
-    );
-  }, []);
+  // const clearList = () => {
+  //   setFav([]);
+  // };
 
   return (
     <>
-      <div>
+      <div className={styles.wrapper}>
+        <h1>Chose Your favorite currencies</h1>
         {currencies ? (
           <div>
             {currencies.map((data) => (
-              <>
-                <Currency
-                  key={data.code}
-                  id={data.code}
-                  currency={data.currency}
-                  code={data.code}
-                  mid={data.mid}
-                  addEntry={addEntry}
-                />
-              </>
+              <Currency
+                key={data.code}
+                code={data.code}
+                currency={data.currency}
+                mid={data.mid}
+                handleAdd={handleAdd}
+              />
             ))}
           </div>
         ) : (
@@ -52,23 +39,19 @@ const CurrencyList = () => {
           </div>
         )}
       </div>
-      <div>
+      {/* <div>
         <p>FavList</p>
         <div>
           <>
-            {fav.map((favItem, index) => (
-              <div>
-                <div key={favItem} id={index}>
-                  {favItem}
-                </div>
-              </div>
+            {fav.map((favItem) => (
+              <div key={favItem}>{favItem}</div>
             ))}
           </>
           <button type="button" onClick={clearList}>
             Clear
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
