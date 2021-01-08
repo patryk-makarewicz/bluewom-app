@@ -9,10 +9,9 @@ const Fetch = () => {
   const [error, setError] = useState(false);
   const [fav, setFav] = useState([]);
 
-  const handleAdd = (e) => {
-    setFav(e.target.id);
+  const handleAdd = () => {
+    setFav(fav);
   };
-  console.log(fav);
 
   useEffect(() => {
     // eslint-disable-next-line no-undef

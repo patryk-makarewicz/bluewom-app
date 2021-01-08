@@ -1,13 +1,9 @@
 import React from 'react';
 
-const Currency = ({ code, mid, handleAdd }) => {
+const Currency = () => {
   return (
     <div>
-      <div>{code}</div>
-      <div>{mid}</div>
-      <button type="button" onClick={handleAdd}>
-        +
-      </button>
+      <div>...</div>
     </div>
   );
 };

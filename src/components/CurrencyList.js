@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import React from 'react';
 
 import Currency from './Currency';
@@ -24,16 +25,14 @@ const CurrencyList = ({ currencies, error, handleAdd }) => {
         {currencies ? (
           <div>
             {currencies.map((data) => (
-              <>
-                <Currency
-                  key={data.code}
-                  id={data.code}
-                  code={data.code}
-                  currency={data.currency}
-                  mid={data.mid}
-                  handleAdd={handleAdd}
-                />
-              </>
+              <Currency
+                key={data.code}
+                id={data.code}
+                code={data.code}
+                currency={data.currency}
+                mid={data.mid}
+                handleAdd={handleAdd}
+              />
             ))}
           </div>
         ) : (

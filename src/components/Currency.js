@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Currency = ({ currency, code, mid, handleAdd }) => {
+import styles from './Currency.module.scss';
+
+const Currency = ({ code, mid, handleAdd }) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div>{code}</div>
-      <div>{currency}</div>
       <div>{mid}</div>
-      <button type="button" id={code} onClick={handleAdd}>
+      <button className={styles.button} type="button" onClick={handleAdd}>
         +
       </button>
     </div>

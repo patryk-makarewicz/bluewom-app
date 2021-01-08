@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  max-width: 300px;
+  height: 100px;
+  border-radius: 20px;
+  background: #282c34;
+  box-shadow: 15px 15px 40px #22252c, -15px -15px 40px #2e333c;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.button {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+}
