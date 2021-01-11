@@ -1,13 +1,19 @@
 import React from 'react';
-
+import { Provider } from 'react-redux';
 import GlobalStyle from 'theme/GlobalStyle';
-import Fetch from 'components/Fetch';
+import store from '../store';
 
-const Root = () => (
-  <>
-    <GlobalStyle />
-    <Fetch />
-  </>
-);
+import Currency from '../currency/Currency';
+
+const Root = () => {
+  return (
+    <Provider store={store}>
+      <GlobalStyle />
+      <div>
+        <Currency />
+      </div>
+    </Provider>
+  );
+};
 
 export default Root;
