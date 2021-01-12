@@ -1,12 +1,17 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Favorite = ({ favorites }) => {
+const Favorite = () => {
   return (
     <div>
       <h2>Fav</h2>
-      <p>{favorites}</p>
     </div>
   );
 };
 
-export default Favorite;
+const mapStateToProps = (state) => ({
+  favItem: state.favItem,
+});
+
+export default connect(mapStateToProps)(Favorite);
