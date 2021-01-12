@@ -9,9 +9,7 @@ const Root = () => {
   return (
     <Provider store={store}>
       <GlobalStyle />
-      <div>
-        <Currency />
-      </div>
+      <Currency />
     </Provider>
   );
 };

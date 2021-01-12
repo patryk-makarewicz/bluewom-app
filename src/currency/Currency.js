@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrencies } from 'reducers';
+import { fetchCurrencies, addToFavorites } from 'reducers';
 
+import styles from './Currency.module.scss';
 import CurrencyList from './components/CurrencyList';
+import Favorite from './components/Favorite';
 
 const mapStateToProps = (state) => ({
   currencies: state.currencies,
@@ -11,7 +13,7 @@ const mapStateToProps = (state) => ({
 });
 
 const Currency = (props) => {
-  const { currencies, isLoading } = props;
+  const { currencies, isLoading, favorites } = props;
 
   useEffect(() => {
     props.fetchCurrencies();
@@ -20,9 +22,10 @@ const Currency = (props) => {
   return (
     <div>
       <h1>Chose Your favorite currencies</h1>
-      <div>
+      <div className={styles.wrapper}>
         {isLoading && <p>Loading...</p>}
-        <CurrencyList currencies={currencies} />
+        <CurrencyList currencies={currencies} toggleAddToFav={addToFavorites} />
+        <Favorite favorites={favorites} />
       </div>
     </div>
   );
