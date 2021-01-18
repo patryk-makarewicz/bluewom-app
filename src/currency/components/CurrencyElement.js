@@ -2,18 +2,18 @@ import React from 'react';
 
 import styles from './CurrencyElement.module.scss';
 
-const CurrencyElement = ({ code, mid, currency, toggleAddToFav }) => {
+const CurrencyElement = ({ code, mid }) => {
   return (
     <div className={styles.wrapper}>
       <div>{code}</div>
       <div>{mid}</div>
-      <button
+      {/* <button
         className={styles.button}
         type="button"
         onClick={() => toggleAddToFav({ code, mid, currency })}
       >
         +
-      </button>
+      </button> */}
     </div>
   );
 };

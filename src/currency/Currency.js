@@ -1,13 +1,14 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrencies, addToFavorites } from 'reducers';
+import { fetchCurrencies } from 'reducers';
 
 import styles from './Currency.module.scss';
 import CurrencyList from './components/CurrencyList';
-import Favorite from './components/Favorite';
 
 const Currency = (props) => {
-  const { currencies, isLoading, favorites } = props;
+  const { currencies, isLoading } = props;
 
   useEffect(() => {
     props.fetchCurrencies();
@@ -18,8 +19,7 @@ const Currency = (props) => {
       <h1>Chose Your favorite currencies</h1>
       <div className={styles.wrapper}>
         {isLoading && <p>Loading...</p>}
-        <CurrencyList currencies={currencies} toggleAddToFav={() => props.addToFavorites()} />
-        <Favorite favorites={favorites} />
+        <CurrencyList currencies={currencies} />
       </div>
     </div>
   );
@@ -27,11 +27,10 @@ const Currency = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCurrencies: () => dispatch(fetchCurrencies()),
-  addToFavorites: () => dispatch(addToFavorites()),
 });
 
 const mapStateToProps = (state) => ({
-  // dodac do fav
+  favorites: state.favorites,
   currencies: state.currencies,
   isLoading: state.isLoading,
   isError: state.isError,
