@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './CurrencyList.module.scss';
 import CurrencyElement from './CurrencyElement';
 
-function CurrencyList({ currencies, toggleAddToFav }) {
+function CurrencyList({ currencies, addToFavorites }) {
   return (
     <div className={styles.wrapper}>
       {currencies.map((currency) => (
@@ -13,8 +13,7 @@ function CurrencyList({ currencies, toggleAddToFav }) {
           code={currency.code}
           mid={currency.mid}
           currency={currency.currency}
-          toggleAddToFav={toggleAddToFav}
-          currencies={currencies}
+          addToFavorites={addToFavorites}
         />
       ))}
     </div>

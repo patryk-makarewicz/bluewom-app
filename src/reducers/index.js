@@ -1,6 +1,7 @@
-const FETCH_CURRENCIES_REQUESTED = '/currency/FETCH_CURRENCY_REQUESTED';
-const FETCH_CURRENCIES_SUCCEEDED = '/currency/FETCH_CURRENCY_SUCCEEDED';
-const FETCH_CURRENCIES_FAILED = '/currency/FETCH_CURRENCY_FAILED';
+const FETCH_CURRENCIES_REQUESTED = 'FETCH_CURRENCY_REQUESTED';
+const FETCH_CURRENCIES_SUCCEEDED = 'FETCH_CURRENCY_SUCCEEDED';
+const FETCH_CURRENCIES_FAILED = 'FETCH_CURRENCY_FAILED';
+const ADD_CURRENCIES_TO_FAVORITES = '/ADD_CURRENCIES_TO_FAVORITES';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -12,6 +13,14 @@ const INITIAL_STATE = {
 const fetchRequested = () => ({ type: FETCH_CURRENCIES_REQUESTED });
 const fetchSucceeded = (data) => ({ type: FETCH_CURRENCIES_SUCCEEDED, payload: data });
 const fetchFailed = () => ({ type: FETCH_CURRENCIES_FAILED });
+
+export function addToFavorites(favItem) {
+  console.log(favItem);
+  return {
+    type: ADD_CURRENCIES_TO_FAVORITES,
+    payload: favItem,
+  };
+}
 
 export const fetchCurrencies = () => {
   // eslint-disable-next-line func-names
@@ -49,6 +58,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isError: true,
+      };
+    case ADD_CURRENCIES_TO_FAVORITES:
+      return {
+        ...state,
+        favorites: action.payload,
       };
     default:
       return state;
