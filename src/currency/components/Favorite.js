@@ -2,10 +2,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Favorite = () => {
+const Favorite = ({ favItem }) => {
   return (
     <div>
       <h2>Fav</h2>
+      <p>{favItem}</p>
     </div>
   );
 };

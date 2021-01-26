@@ -14,13 +14,13 @@ const fetchRequested = () => ({ type: FETCH_CURRENCIES_REQUESTED });
 const fetchSucceeded = (data) => ({ type: FETCH_CURRENCIES_SUCCEEDED, payload: data });
 const fetchFailed = () => ({ type: FETCH_CURRENCIES_FAILED });
 
-export function addToFavorites(favItem) {
+export const addToFavorites = (favItem) => {
   console.log(favItem);
   return {
     type: ADD_CURRENCIES_TO_FAVORITES,
     payload: favItem,
   };
-}
+};
 
 export const fetchCurrencies = () => {
   // eslint-disable-next-line func-names
