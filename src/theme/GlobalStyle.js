@@ -16,14 +16,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;;
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    background-color: white;
+    color: black;
     margin: 0;
     padding: 0;
   }
