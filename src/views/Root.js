@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import GlobalStyle from 'theme/GlobalStyle';
-import store from '../store';
+import store from '../redux/store';
 
 import Currency from '../currency/Currency';
 
