@@ -6,7 +6,7 @@ import FavoriteItem from './components/favoriteItem';
 const Favorites = ({ favCart }) => {
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1>Favorites ( {favCart.length} )</h1>
       {favCart.map((favCurrency) => (
         <FavoriteItem key={favCurrency.code} favCurrency={favCurrency} />
       ))}
