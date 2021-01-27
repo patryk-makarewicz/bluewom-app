@@ -33,13 +33,13 @@ const currenciesReducer = (state = INITIAL_STATE, action) => {
       };
     case actionTypes.ADD_TO_FAVORITES:
       const item = state.currencies.find((currency) => currency.code === action.payload.id);
-      const inFavCart = state.favCart.find((item) =>
-        item.id === action.payload.id ? true : false,
+      const inFavCart = state.favCart.find((currency) =>
+        currency.code === action.payload.id ? true : false,
       );
       return {
         ...state,
         favCart: inFavCart
-          ? state.favCart.map((item) => (item.code === action.payload.id ? { ...state } : item))
+          ? state.favCart.filter((item) => item.code !== action.payload.id)
           : [...state.favCart, { ...item }],
       };
     case actionTypes.REMOVE_FROM_FAVORITES:
