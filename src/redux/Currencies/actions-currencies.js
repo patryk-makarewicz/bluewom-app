@@ -27,7 +27,7 @@ export const addToFavorites = (itemID) => ({
   },
 });
 
-export const RemoveFromFavorites = (itemID) => ({
+export const removeFromFavorites = (itemID) => ({
   type: actionTypes.REMOVE_FROM_FAVORITES,
   payload: {
     id: itemID,

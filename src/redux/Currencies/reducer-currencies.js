@@ -39,8 +39,13 @@ const currenciesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         favCart: inFavCart
-          ? state.favCart.map((item) => (item.id === action.payload.id ? { ...state } : item))
+          ? state.favCart.map((item) => (item.code === action.payload.id ? { ...state } : item))
           : [...state.favCart, { ...item }],
+      };
+    case actionTypes.REMOVE_FROM_FAVORITES:
+      return {
+        ...state,
+        favCart: state.favCart.filter((item) => item.code !== action.payload.id),
       };
     default:
       return state;
