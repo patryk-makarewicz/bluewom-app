@@ -1,7 +1,11 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-unneeded-ternary */
 import * as actionTypes from './types-currencies';
 
 const INITIAL_STATE = {
   currencies: [],
+  favCart: [],
   isLoading: false,
   isError: false,
 };
@@ -26,6 +30,17 @@ const currenciesReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isError: true,
+      };
+    case actionTypes.ADD_TO_FAVORITES:
+      const item = state.currencies.find((currency) => currency.code === action.payload.id);
+      const inFavCart = state.favCart.find((item) =>
+        item.id === action.payload.id ? true : false,
+      );
+      return {
+        ...state,
+        favCart: inFavCart
+          ? state.favCart.map((item) => (item.id === action.payload.id ? { ...state } : item))
+          : [...state.favCart, { ...item }],
       };
     default:
       return state;

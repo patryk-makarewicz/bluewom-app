@@ -19,3 +19,17 @@ export const fetchCurrencies = () => {
       });
   };
 };
+
+export const addToFavorites = (itemID) => ({
+  type: actionTypes.ADD_TO_FAVORITES,
+  payload: {
+    id: itemID,
+  },
+});
+
+export const RemoveFromFavorites = (itemID) => ({
+  type: actionTypes.REMOVE_FROM_FAVORITES,
+  payload: {
+    id: itemID,
+  },
+});
