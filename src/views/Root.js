@@ -19,12 +19,12 @@ const Root = () => {
           </Route>
         </Switch>
         <Switch>
-          <Route exact path="/currencies">
+          <Route path="/currencies">
             <Currencies />
           </Route>
         </Switch>
         <Switch>
-          <Route exact path="/favorites">
+          <Route path="/favorites">
             <Favorites />
           </Route>
         </Switch>

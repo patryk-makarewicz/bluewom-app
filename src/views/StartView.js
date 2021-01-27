@@ -1,9 +1,10 @@
 import React from 'react';
 
 const StartView = () => (
-  <div>
-    <h1>Start VIEW</h1>
-  </div>
+  <header>
+    <h1>CURRENCY APP</h1>
+    <p>This is an app for checking the value of your favorite currencies from Bank NBP.</p>
+  </header>
 );
 
 export default StartView;
