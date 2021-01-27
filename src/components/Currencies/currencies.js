@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrencies } from '../redux/Currencies/actions-currencies';
+import { fetchCurrencies } from '../../redux/Currencies/actions-currencies';
 
-import styles from './Currency.module.scss';
+import styles from './currencies.module.scss';
+import Currency from './components/currency';
 
-const Currency = (props) => {
+const Currencies = (props) => {
   const { currencies, isLoading } = props;
 
   useEffect(() => {
@@ -14,17 +15,11 @@ const Currency = (props) => {
   return (
     <div>
       <h1>Chose Your favorite currencies</h1>
-      <div className={styles.hero}>
+      <div className={styles.wrapper}>
         {isLoading && <p>Loading...</p>}
-        <div className={styles.wrapper}>
+        <div className={styles.innerWrapper}>
           {currencies.map((currency) => (
-            <div className={styles.innerWrapper} key={currency.code}>
-              <div>{currency.code}</div>
-              <div>{currency.mid}</div>
-              <button className={styles.button} type="button">
-                +
-              </button>
-            </div>
+            <Currency currency={currency} key={currency.code} />
           ))}
         </div>
       </div>
@@ -42,4 +37,4 @@ const mapStateToProps = (state) => ({
   isError: state.currencies.isError,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Currency);
+export default connect(mapStateToProps, mapDispatchToProps)(Currencies);
