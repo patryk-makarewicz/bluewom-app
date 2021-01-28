@@ -7,7 +7,7 @@ import Button from '../components/Button/button';
 const StartView = () => (
   <div className={styles.wrapper}>
     <div className={styles.inner__wrapper}>
-      <EuroIcon style={{ fontSize: 250 }} color="primary" />
+      <EuroIcon style={{ fontSize: 200 }} color="primary" />
       <header className={styles.header}>
         <h1 className={styles.header__title}>CURRENCY APP</h1>
         <p className={styles.header__paragraph}>
