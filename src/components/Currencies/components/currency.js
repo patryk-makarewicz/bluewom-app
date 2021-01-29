@@ -16,20 +16,27 @@ const Currency = ({ currency, addToFavorites }) => {
   };
 
   return (
-    <div className={styles.currency}>
-      <div>{currency.code}</div>
-      <div>{currency.mid}</div>
-      <button
-        className={styles.currency__button}
-        type="button"
-        onClick={() => addToFavorites(currency.code)}
-      >
-        {clicked === false ? (
-          <StarBorderIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
-        ) : (
-          <StarIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
-        )}
-      </button>
+    <div className={styles.wrapper}>
+      <div className={styles.currency}>
+        <div className={styles.currency__name}>{currency.currency}</div>
+        <div className={styles.currency__value}>
+          <div>{currency.code}</div>
+          <div>{currency.mid} PLN</div>
+        </div>
+      </div>
+      <div className={styles.currency__star}>
+        <button
+          className={styles.currency__button}
+          type="button"
+          onClick={() => addToFavorites(currency.code)}
+        >
+          {clicked === false ? (
+            <StarBorderIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+          ) : (
+            <StarIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+          )}
+        </button>
+      </div>
     </div>
   );
 };
