@@ -5,22 +5,21 @@
   justify-content: space-between;
   font-weight: 500;
   width: 300px;
-  height: 100px;
+  height: 150px;
   border: 1px solid var(--gray);
-  box-shadow: 0px 5px 10px -5px #54595f;
+  box-shadow: 0px 5px 5px -5px var(--gray-dark);
   border-radius: 20px;
   background: white;
-  color: black;
-  text-shadow: 0px 0px 1px #939597;
+  color: var(--gray-dark);
   margin: 10px;
-  padding: 0 20px;
+  padding: 30px;
+  font-size: 14px;
 }
 
 .currency {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   max-width: 250px;
   &__button {
     outline-style: none;
@@ -34,11 +33,15 @@
 
   &__name {
     text-transform: uppercase;
-    height: 35px;
+    padding-bottom: 40px;
   }
 
   &__star {
     margin-left: 0px;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__value {
@@ -46,6 +49,5 @@
     justify-content: space-between;
     align-items: center;
     width: 130px;
-    height: 28px;
   }
 }

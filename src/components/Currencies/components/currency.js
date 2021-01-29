@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { addToFavorites } from '../../../redux/Currencies/actions-currencies';
 
 import styles from './currency.module.scss';
@@ -31,9 +31,9 @@ const Currency = ({ currency, addToFavorites }) => {
           onClick={() => addToFavorites(currency.code)}
         >
           {clicked === false ? (
-            <StarBorderIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+            <FavoriteBorderIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
           ) : (
-            <StarIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+            <FavoriteIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
           )}
         </button>
       </div>
