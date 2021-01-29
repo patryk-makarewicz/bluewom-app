@@ -1,0 +1,31 @@
+.wrapperOpen {
+  background-color: #1976d2;
+  box-shadow: 0 0 5px #54595f;
+  color: white;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 300px;
+  transition: all 0.3s ease-out;
+}
+
+.wrapperClose {
+  background-color: #1976d2;
+  box-shadow: 0 0 5px #54595f;
+  color: white;
+  position: fixed;
+  top: -301px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 300px;
+  transition: all 0.3s ease-out;
+}
+
+.hamburger {
+  background-color: #1976d2;
+  border: none;
+  outline: none;
+}
