@@ -5,7 +5,7 @@ import styles from './Currencies.module.scss';
 
 const CurrenciesView = () => (
   <div className={styles.wrapper}>
-    <h1>CurrenciesView</h1>
+    <p className={styles.currencies}>Add your currencies to favorites and check their value.</p>
     <Currencies />
   </div>
 );

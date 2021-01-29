@@ -21,7 +21,7 @@ const Currency = ({ currency, addToFavorites }) => {
         <div className={styles.currency__name}>{currency.currency}</div>
         <div className={styles.currency__value}>
           <div>{currency.code}</div>
-          <div>{currency.mid} PLN</div>
+          <div>{currency.mid.toFixed(4)} PLN</div>
         </div>
       </div>
       <div className={styles.currency__star}>

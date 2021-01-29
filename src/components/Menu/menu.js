@@ -8,7 +8,7 @@ const Menu = () => (
   <header className={styles.wrapper}>
     <div className={styles.menu}>
       <div className={styles.logo}>
-        <EuroIcon style={{ fontSize: 18.5, color: 'white' }} />
+        <EuroIcon style={{ fontSize: 20, color: 'white', marginTop: '-1px' }} />
         <p className={styles.logo__title}>URRENCY APP</p>
       </div>
       <NavigationBar />

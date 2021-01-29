@@ -7,7 +7,7 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.footer__logo}>
       <p className={styles.footer__title}>
-        <EuroIcon style={{ fontSize: 16.5, color: '#939597', marginTop: '2px' }} />
+        <EuroIcon style={{ fontSize: 17, color: '#939597', marginTop: '2px' }} />
         URRENCY APP
       </p>
       <p>
