@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
+import { Fade as Hamburger } from 'hamburger-react';
 import MenuLink from './menuLink';
-import HamburgerButton from './hamburger';
 import styles from './navigation.module.scss';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
   const handleOpenMenu = () => {
     setShowNav(!showNav);
-    setIsOpen(isOpen);
+    setOpen(isOpen);
   };
 
   return (
@@ -21,7 +21,14 @@ const Navigation = () => {
             <MenuLink closeMenu={handleOpenMenu} />
           </div>
           <button type="button" className={styles.hamburger} onClick={handleOpenMenu}>
-            <HamburgerButton color="green" />
+            <Hamburger
+              toggled={!isOpen}
+              toggle={setOpen}
+              size={25}
+              direction="left"
+              duration={0.4}
+              color="#1976d2"
+            />
           </button>
         </>
       ) : (
@@ -30,7 +37,14 @@ const Navigation = () => {
             <MenuLink closeMenu={handleOpenMenu} />
           </div>
           <button type="button" className={styles.hamburger} onClick={handleOpenMenu}>
-            <HamburgerButton color="red" />
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              size={25}
+              direction="left"
+              duration={0.4}
+              color="#FFFFFF"
+            />
           </button>
         </>
       )}
