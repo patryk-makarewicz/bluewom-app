@@ -1,3 +1,32 @@
 .footer {
-  border-top: 1px solid var(--main-blue);
+  color: var(--gray);
+  border-top: 1px solid var(--gray);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    color: var(--gray);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    display: flex;
+  }
 }
