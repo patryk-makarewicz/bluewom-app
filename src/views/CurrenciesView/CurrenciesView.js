@@ -13,8 +13,10 @@ const CurrenciesView = ({ favCart }) => (
     <p className={styles.currencies}>
       You have in favorites
       <NavLink className={styles.currencies__link} to="/favorites">
-        <Badge badgeContent={favCart.length} color="secondary" showZero>
-          <StarIcon style={{ fontSize: 40, color: '#fbc02d', marginBottom: '5px' }} />
+        <Badge badgeContent={favCart.length} color="secondary" showZero style={{ zIndex: '-1000' }}>
+          <StarIcon
+            style={{ fontSize: 40, color: '#fbc02d', marginBottom: '5px', zIndex: '-1000' }}
+          />
         </Badge>
       </NavLink>
     </p>

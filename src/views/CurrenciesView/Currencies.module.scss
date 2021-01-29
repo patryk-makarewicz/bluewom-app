@@ -17,6 +17,7 @@
 
   &__link {
     padding: 10px 5px;
+    z-index: -1000;
     &:hover {
       background-color: hsl(0, 0%, 96%);
       border-radius: 50%;

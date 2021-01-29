@@ -6,7 +6,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
 import { addToFavorites } from '../../../redux/Currencies/actions-currencies';
 
-import styles from './currency.module.scss';
+import './currency.scss';
 
 const Currency = ({ currency, addToFavorites }) => {
   const [clicked, setClicked] = useState(false);
@@ -15,18 +15,24 @@ const Currency = ({ currency, addToFavorites }) => {
     setClicked(!clicked);
   };
 
+  const styles = {
+    wrapper: {
+      transform: clicked && 'rotateZ(360deg)',
+    },
+  };
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.currency}>
-        <div className={styles.currency__name}>{currency.currency}</div>
-        <div className={styles.currency__value}>
+    <div className="wrapper" style={styles.wrapper}>
+      <div className="currency">
+        <div className="currency__name">{currency.currency}</div>
+        <div className="currency__value">
           <div>{currency.code}</div>
           <div>{currency.mid.toFixed(4)} PLN</div>
         </div>
       </div>
-      <div className={styles.currency__star}>
+      <div className="currency__star">
         <button
-          className={styles.currency__button}
+          className="currency__button"
           type="button"
           onClick={() => addToFavorites(currency.code)}
         >
