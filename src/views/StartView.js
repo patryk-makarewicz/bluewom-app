@@ -1,8 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import EuroIcon from '@material-ui/icons/Euro';
 import styles from './StartView.module.scss';
-import Button from '../components/Button/button';
 
 const StartView = () => (
   <div className={styles.wrapper}>
@@ -13,7 +13,9 @@ const StartView = () => (
         <p className={styles.header__paragraph}>
           This is an app for checking the value of your favorite currencies from Bank NBP.
         </p>
-        <Button>GET STARTED</Button>
+        <NavLink className={styles.header__link} to="/currencies">
+          GET STARTED
+        </NavLink>
       </header>
     </div>
   </div>

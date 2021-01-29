@@ -2,7 +2,7 @@ import React from 'react';
 
 import EuroIcon from '@material-ui/icons/Euro';
 import styles from './menu.module.scss';
-import Navigation from './components/navigation';
+import NavigationBar from './components/navigation-bar';
 
 const Menu = () => (
   <header className={styles.wrapper}>
@@ -11,7 +11,7 @@ const Menu = () => (
         <EuroIcon style={{ fontSize: 18.5, color: 'white' }} />
         <p className={styles.logo__title}>URRENCY APP</p>
       </div>
-      <Navigation />
+      <NavigationBar />
     </div>
   </header>
 );

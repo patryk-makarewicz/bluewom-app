@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { Fade as Hamburger } from 'hamburger-react';
 import MenuLink from './menuLink';
-import styles from './navigation.module.scss';
+import styles from './navigation-bar.module.scss';
 
-const Navigation = () => {
+const NavigationBar = () => {
   const [isOpen, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
@@ -52,4 +52,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavigationBar;
