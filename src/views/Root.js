@@ -6,7 +6,7 @@ import store from '../redux/store';
 
 import Menu from '../components/Menu/menu';
 import Footer from '../components/Footer/footer';
-import StartView from './StartView';
+import StartView from './StartView/StartView';
 import Currencies from '../components/Currencies/currencies';
 import Favorites from '../components/Favorites/favorites';
 
