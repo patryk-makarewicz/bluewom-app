@@ -11,12 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  html {
-    font-size: 62.5%;
-  }
+
 
   body {
-    font-size: 1.6rem;
+    font-size: 1.6px;
     font-family: 'Roboto', sans-serif;;
     background-color: white;
     color: black;
