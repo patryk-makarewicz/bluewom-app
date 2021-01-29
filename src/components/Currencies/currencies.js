@@ -13,14 +13,14 @@ const Currencies = (props) => {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <>
       {isLoading && <p>Loading...</p>}
-      <div className={styles.innerWrapper}>
+      <div className={styles.wrapper}>
         {currencies.map((currency) => (
           <Currency currency={currency} key={currency.code} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
