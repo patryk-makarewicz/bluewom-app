@@ -1,3 +1,4 @@
+![cover](./public/cover.png)
 
 # General info
 
