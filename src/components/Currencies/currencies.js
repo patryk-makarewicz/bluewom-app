@@ -13,15 +13,12 @@ const Currencies = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1>Chose Your favorite currencies</h1>
-      <div className={styles.wrapper}>
-        {isLoading && <p>Loading...</p>}
-        <div className={styles.innerWrapper}>
-          {currencies.map((currency) => (
-            <Currency currency={currency} key={currency.code} />
-          ))}
-        </div>
+    <div className={styles.wrapper}>
+      {isLoading && <p>Loading...</p>}
+      <div className={styles.innerWrapper}>
+        {currencies.map((currency) => (
+          <Currency currency={currency} key={currency.code} />
+        ))}
       </div>
     </div>
   );

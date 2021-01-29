@@ -10,7 +10,7 @@ const Footer = () => (
         <EuroIcon style={{ fontSize: 16.5, color: '#939597', marginTop: '2px' }} />
         URRENCY APP
       </p>
-      <p className={styles.footer__content}>
+      <p>
         create by
         <a
           className={styles.footer__link}

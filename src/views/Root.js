@@ -7,7 +7,7 @@ import store from '../redux/store';
 import Menu from '../components/Menu/menu';
 import Footer from '../components/Footer/footer';
 import StartView from './StartView/StartView';
-import Currencies from '../components/Currencies/currencies';
+import CurrenciesView from './CurrenciesView/CurrenciesView';
 import Favorites from '../components/Favorites/favorites';
 
 const Root = () => {
@@ -23,7 +23,7 @@ const Root = () => {
         </Switch>
         <Switch>
           <Route path="/currencies">
-            <Currencies />
+            <CurrenciesView />
           </Route>
         </Switch>
         <Switch>

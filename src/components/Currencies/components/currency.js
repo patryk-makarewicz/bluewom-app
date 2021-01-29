@@ -1,11 +1,20 @@
 /* eslint-disable no-shadow */
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import StarIcon from '@material-ui/icons/Star';
 import { addToFavorites } from '../../../redux/Currencies/actions-currencies';
 
 import styles from './currency.module.scss';
 
 const Currency = ({ currency, addToFavorites }) => {
+  const [clicked, setClicked] = useState(false);
+
+  const handleClicked = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <div className={styles.currency}>
       <div>{currency.code}</div>
@@ -15,7 +24,11 @@ const Currency = ({ currency, addToFavorites }) => {
         type="button"
         onClick={() => addToFavorites(currency.code)}
       >
-        +
+        {clicked === false ? (
+          <StarBorderIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+        ) : (
+          <StarIcon style={{ fontSize: 30 }} color="primary" onClick={handleClicked} />
+        )}
       </button>
     </div>
   );
