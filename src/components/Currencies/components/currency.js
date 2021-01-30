@@ -15,16 +15,16 @@ const Currency = ({ currency, addToFavorites }) => {
     setClicked(!clicked);
   };
 
-  const styles = {
-    wrapper: {
-      transform: clicked && 'rotateZ(360deg)',
-    },
-  };
+  // const styles = {
+  //   wrapper: {
+  //     transform: clicked && 'rotateZ(360deg)',
+  //   },
+  // };
 
   return (
     <>
       {clicked === false ? (
-        <div className="wrapper" style={styles.wrapper}>
+        <div className="wrapper">
           <div className="currency">
             <div className="currency__name">{currency.currency}</div>
             <div className="currency__value">
@@ -43,7 +43,7 @@ const Currency = ({ currency, addToFavorites }) => {
           </div>
         </div>
       ) : (
-        <div className="wrapper" style={styles.wrapper}>
+        <div className="wrapper">
           <div className="currency">
             <div className="currency__value currency__value--fav">
               <div>

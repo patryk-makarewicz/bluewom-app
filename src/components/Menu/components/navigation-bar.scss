@@ -24,7 +24,6 @@
 
 .hamburger {
   cursor: pointer;
-  z-index: 10000;
   width: 30px;
   height: 30px;
 
@@ -34,7 +33,6 @@
     background-color: white;
     margin: 7px 0;
     transition: 0.4s;
-    z-index: 10000;
 
     &--color {
       background-color: var(--main-blue);
