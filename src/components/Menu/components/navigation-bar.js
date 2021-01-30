@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 
-import { Fade as Hamburger } from 'hamburger-react';
 import MenuLink from './menuLink';
-import styles from './navigation-bar.module.scss';
+import './navigation-bar.scss';
 
 const NavigationBar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -13,39 +14,41 @@ const NavigationBar = () => {
     setOpen(isOpen);
   };
 
+  const styles = {
+    bar1: {
+      transform: showNav && 'rotate(-45deg) translate(-6px, 8px)',
+    },
+    bar2: {
+      opacity: showNav && 0,
+    },
+    bar3: {
+      transform: showNav && 'rotate(45deg) translate(-5px, -7px)',
+    },
+  };
+
   return (
     <nav>
       {showNav ? (
         <>
-          <div className={styles.wrapperOpen}>
+          <div className="wrapperOpen">
             <MenuLink closeMenu={handleOpenMenu} />
           </div>
-          <button type="button" className={styles.hamburger} onClick={handleOpenMenu}>
-            <Hamburger
-              toggled={!isOpen}
-              toggle={setOpen}
-              size={25}
-              direction="left"
-              duration={0.4}
-              color="#1976d2"
-            />
-          </button>
+          <div className="hamburger" onClick={handleOpenMenu}>
+            <div className="hamburger__bar hamburger__bar--color" style={styles.bar1} />
+            <div className="hamburger__bar hamburger__bar--color" style={styles.bar2} />
+            <div className="hamburger__bar hamburger__bar--color" style={styles.bar3} />
+          </div>
         </>
       ) : (
         <>
-          <div className={styles.wrapperClose}>
+          <div className="wrapperClose">
             <MenuLink closeMenu={handleOpenMenu} />
           </div>
-          <button type="button" className={styles.hamburger} onClick={handleOpenMenu}>
-            <Hamburger
-              toggled={isOpen}
-              toggle={setOpen}
-              size={25}
-              direction="left"
-              duration={0.4}
-              color="#FFFFFF"
-            />
-          </button>
+          <div className="hamburger" onClick={handleOpenMenu}>
+            <div className="hamburger__bar" style={styles.bar1} />
+            <div className="hamburger__bar" style={styles.bar2} />
+            <div className="hamburger__bar" style={styles.bar3} />
+          </div>
         </>
       )}
     </nav>

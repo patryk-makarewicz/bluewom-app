@@ -23,7 +23,21 @@
 }
 
 .hamburger {
-  background-color: #1976d2;
-  border: none;
-  outline: none;
+  cursor: pointer;
+  z-index: 10000;
+  width: 30px;
+  height: 30px;
+
+  &__bar {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    margin: 7px 0;
+    transition: 0.4s;
+    z-index: 10000;
+
+    &--color {
+      background-color: var(--main-blue);
+    }
+  }
 }
