@@ -1,28 +1,29 @@
 .wrapperOpen {
   background-color: white;
   box-shadow: 0 0 5px #54595f;
-  position: fixed;
+  position: absolute;
+  z-index: 1000;
   top: 0px;
   left: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  transition: all 0.5s ease-out;
 }
 
 .wrapperClose {
   background-color: #1976d2;
   box-shadow: 0 0 5px #54595f;
-  position: fixed;
+  position: absolute;
   top: -1000px;
   left: 0;
   right: 0;
   width: 100vw;
   height: 300px;
-  transition: all 0.5s ease-out;
 }
 
 .hamburger {
+  position: relative;
+  z-index: 1500;
   cursor: pointer;
   width: 30px;
   height: 30px;

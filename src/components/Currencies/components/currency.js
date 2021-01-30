@@ -15,12 +15,6 @@ const Currency = ({ currency, addToFavorites }) => {
     setClicked(!clicked);
   };
 
-  // const styles = {
-  //   wrapper: {
-  //     transform: clicked && 'rotateZ(360deg)',
-  //   },
-  // };
-
   return (
     <>
       {clicked === false ? (
