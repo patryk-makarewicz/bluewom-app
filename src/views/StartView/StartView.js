@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import StartFrame from '../../components/StartFrame/startFrame';
+import Frame from '../../components/Frame/frame';
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,7 +13,11 @@ const Wrapper = styled.div`
 
 const StartView = () => (
   <Wrapper>
-    <StartFrame />
+    <Frame
+      text="This is an app for checking the value of your favorite currencies from Bank NBP."
+      label=" GET STARTED"
+      to="/currencies"
+    />
   </Wrapper>
 );
 
