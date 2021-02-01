@@ -1,24 +1,20 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
-import EuroIcon from '@material-ui/icons/Euro';
-import styles from './StartView.module.scss';
+import styled from 'styled-components';
+import StartFrame from '../../components/StartFrame/startFrame';
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 10px;
+`;
 
 const StartView = () => (
-  <div className={styles.wrapper}>
-    <div className={styles.inner__wrapper}>
-      <EuroIcon style={{ fontSize: 200 }} color="primary" />
-      <header className={styles.header}>
-        <h1 className={styles.header__title}>CURRENCY APP</h1>
-        <p className={styles.header__paragraph}>
-          This is an app for checking the value of your favorite currencies from Bank NBP.
-        </p>
-        <NavLink className={styles.header__link} to="/currencies">
-          GET STARTED
-        </NavLink>
-      </header>
-    </div>
-  </div>
+  <Wrapper>
+    <StartFrame />
+  </Wrapper>
 );
 
 export default StartView;
