@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Badge from '@material-ui/core/Badge';
 import StarIcon from '@material-ui/icons/Star';
+import Button from '../../components/Button/button';
 import Frame from '../../components/Frame/frame';
 import Favorites from '../../components/Favorites/favorites';
 
@@ -33,6 +34,11 @@ const Paragraph = styled.p`
   color: var(--gray);
 `;
 
+const Container = styled.div`
+  margin-top: 100px;
+  text-align: center;
+`;
+
 const CurrenciesView = ({ favCart }) => (
   <Wrapper>
     <Paragraph>
@@ -52,7 +58,12 @@ const CurrenciesView = ({ favCart }) => (
         />
       </FrameWrapper>
     ) : (
-      <Favorites />
+      <>
+        <Favorites />
+        <Container>
+          <Button to="/currencies">BACK TO LIST</Button>
+        </Container>
+      </>
     )}
   </Wrapper>
 );
