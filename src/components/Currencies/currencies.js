@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   max-width: 1280px;
 `;
 
-const Loading = styled.p`
+const Loading = styled.div`
   margin: 30px;
   text-align: center;
   font-size: 40px;
