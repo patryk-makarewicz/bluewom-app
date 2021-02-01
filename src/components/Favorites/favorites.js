@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1280px;
 `;
 
 const Favorites = ({ favCart }) => {

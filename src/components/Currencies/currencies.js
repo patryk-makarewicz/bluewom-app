@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
 import { fetchCurrencies } from '../../redux/Currencies/actions-currencies';
-
 import Currency from './components/currency';
 
 const Wrapper = styled.div`
@@ -32,17 +31,18 @@ const Currencies = (props) => {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       {isLoading && (
         <Loading>
-          LOADING...
-          <CircularProgress />
+          LOADING... <CircularProgress />
         </Loading>
       )}
-      {currencies.map((currency) => (
-        <Currency currency={currency} key={currency.code} />
-      ))}
-    </Wrapper>
+      <Wrapper>
+        {currencies.map((currency) => (
+          <Currency currency={currency} key={currency.code} />
+        ))}
+      </Wrapper>
+    </>
   );
 };
 
