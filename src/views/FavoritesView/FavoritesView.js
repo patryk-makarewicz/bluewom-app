@@ -31,7 +31,7 @@ const Paragraph = styled.p`
   text-align: center;
   font-size: 24px;
   text-shadow: 0px 1px 1px var(--gray-dark);
-  color: var(--gray);
+  color: var(--main-blue);
 `;
 
 const Container = styled.div`
