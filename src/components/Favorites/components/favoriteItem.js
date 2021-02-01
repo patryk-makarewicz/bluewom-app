@@ -1,15 +1,30 @@
 /* eslint-disable no-shadow */
 import React from 'react';
 import { connect } from 'react-redux';
+import StarIcon from '@material-ui/icons/Star';
 import { removeFromFavorites } from '../../../redux/Currencies/actions-currencies';
+
+import './favoritesItem.scss';
 
 const FavoriteItem = ({ favCurrency, removeFromFavorites }) => {
   return (
-    <div key={favCurrency.code}>
-      <div>{favCurrency.code}</div>
-      <button type="button" onClick={() => removeFromFavorites(favCurrency.code)}>
-        Remove
-      </button>
+    <div className="wrapper">
+      <div className="currency">
+        <div className="currency__name">{favCurrency.currency}</div>
+        <div className="currency__value">
+          <div>{favCurrency.code}</div>
+          <div>{favCurrency.mid.toFixed(4)} PLN</div>
+        </div>
+      </div>
+      <div className="currency__star">
+        <button
+          className="currency__button"
+          type="button"
+          onClick={() => removeFromFavorites(favCurrency.code)}
+        >
+          <StarIcon style={{ fontSize: 30, color: '#fbc02d' }} />
+        </button>
+      </div>
     </div>
   );
 };

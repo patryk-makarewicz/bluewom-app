@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import { fetchCurrencies } from '../../redux/Currencies/actions-currencies';
 
-import styles from './currencies.module.scss';
 import Currency from './components/currency';
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1280px;
+`;
 
 const Currencies = (props) => {
   const { currencies, isLoading } = props;
@@ -15,11 +22,11 @@ const Currencies = (props) => {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      <div className={styles.wrapper}>
+      <Wrapper>
         {currencies.map((currency) => (
           <Currency currency={currency} key={currency.code} />
         ))}
-      </div>
+      </Wrapper>
     </>
   );
 };

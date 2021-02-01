@@ -10,7 +10,7 @@ import Menu from '../components/Menu/menu';
 import Footer from '../components/Footer/footer';
 import StartView from './StartView/StartView';
 import CurrenciesView from './CurrenciesView/CurrenciesView';
-import Favorites from '../components/Favorites/favorites';
+import FavoritesView from './FavoritesView/FavoritesView';
 
 const persistor = persistStore(store);
 
@@ -33,7 +33,7 @@ const Root = () => {
           </Switch>
           <Switch>
             <Route path="/favorites">
-              <Favorites />
+              <FavoritesView />
             </Route>
           </Switch>
           <Footer />
