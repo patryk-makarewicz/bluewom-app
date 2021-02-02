@@ -8,7 +8,7 @@ export const fetchCurrencies = () => {
   // eslint-disable-next-line func-names
   return function (dispatch) {
     dispatch(fetchRequested());
-    fetch('http://api.nbp.pl/api/exchangerates/tables/A/')
+    fetch('https://api.nbp.pl/api/exchangerates/tables/A/')
       .then((response) => response.json())
       .then((currencies) => {
         dispatch(fetchSucceeded(currencies[0].rates));
