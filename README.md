@@ -2,8 +2,21 @@
 
 # General info
 
-In construction - this is an app for checking the value of your favorite currencies.
+This is an app for checking the value of your favorite currencies.
 <br />
+
+## What's inside?
+
+✔ React<br />
+✔ Redux<br />
+✔ Redux Persist<br />
+✔ Redux Thunk<br />
+✔ JavaScript ES6<br />
+✔ HTML5<br />
+✔ CSS3<br />
+✔ SCSS & BEM<br />
+✔ Styled-Components<br />
+✔ Material-UI<br />
 
 ## Getting Started with Create React App
 
