@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   max-width: 1280px;
 `;
 
-const Loading = styled.div`
+const Alert = styled.div`
   margin: 30px;
   text-align: center;
   font-size: 40px;
@@ -24,7 +24,7 @@ const Loading = styled.div`
 `;
 
 const Currencies = (props) => {
-  const { currencies, isLoading } = props;
+  const { currencies, isLoading, isError } = props;
 
   useEffect(() => {
     props.fetchCurrencies();
@@ -32,10 +32,11 @@ const Currencies = (props) => {
 
   return (
     <>
+      {isError && <Alert>UPSS...PLEASE TRY AGAIN</Alert>}
       {isLoading && (
-        <Loading>
+        <Alert>
           LOADING... <CircularProgress />
-        </Loading>
+        </Alert>
       )}
       <Wrapper>
         {currencies.map((currency) => (
