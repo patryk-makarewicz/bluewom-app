@@ -14,14 +14,12 @@ const Wrapper = styled.div`
 `;
 
 const Alert = styled.div`
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding: 100px 10px;
   text-align: center;
   font-size: 40px;
   text-shadow: 0px 1px 1px var(--gray-dark);
   color: var(--main-blue);
   letter-spacing: 1px;
-  width: 100vw;
 `;
 
 const Currencies = (props) => {
