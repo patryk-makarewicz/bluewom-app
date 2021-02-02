@@ -14,7 +14,8 @@ const Wrapper = styled.div`
 `;
 
 const Alert = styled.div`
-  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 40px;
   text-shadow: 0px 1px 1px var(--gray-dark);
