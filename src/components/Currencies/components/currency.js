@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import StarBorderIcon from '@material-ui/icons/StarBorder';
@@ -8,16 +8,12 @@ import { addToFavorites } from '../../../redux/Currencies/actions-currencies';
 
 import './currency.scss';
 
-const Currency = ({ currency, addToFavorites }) => {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClicked = () => {
-    setClicked(!clicked);
-  };
+const Currency = ({ currency, addToFavorites, favCart }) => {
+  const inFavCart = favCart.find((favCartItem) => favCartItem.code === currency.code);
 
   return (
     <>
-      {clicked === false ? (
+      {!inFavCart ? (
         <div className="wrapper">
           <div className="currency">
             <div className="currency__name">{currency.currency}</div>
@@ -32,7 +28,7 @@ const Currency = ({ currency, addToFavorites }) => {
               type="button"
               onClick={() => addToFavorites(currency.code)}
             >
-              <StarBorderIcon style={{ fontSize: 30, color: '#939597' }} onClick={handleClicked} />
+              <StarBorderIcon style={{ fontSize: 30, color: '#939597' }} />
             </button>
           </div>
         </div>
@@ -51,7 +47,7 @@ const Currency = ({ currency, addToFavorites }) => {
               type="button"
               onClick={() => addToFavorites(currency.code)}
             >
-              <StarIcon style={{ fontSize: 30, color: '#fbc02d' }} onClick={handleClicked} />
+              <StarIcon style={{ fontSize: 30, color: '#fbc02d' }} />
             </button>
           </div>
         </div>
@@ -60,8 +56,12 @@ const Currency = ({ currency, addToFavorites }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  favCart: state.currencies.favCart,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   addToFavorites: (id) => dispatch(addToFavorites(id)),
 });
 
-export default connect(null, mapDispatchToProps)(Currency);
+export default connect(mapStateToProps, mapDispatchToProps)(Currency);
