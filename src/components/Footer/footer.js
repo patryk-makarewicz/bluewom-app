@@ -11,7 +11,7 @@ const Footer = () => (
         URRENCY APP
       </p>
       <p>
-        create by
+        created by
         <a
           className={styles.footer__link}
           href="https://patryk-makarewicz.github.io/"
