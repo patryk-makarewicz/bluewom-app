@@ -29,4 +29,13 @@
     letter-spacing: 2px;
     font-weight: 400;
   }
+
+  &__link {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
 }

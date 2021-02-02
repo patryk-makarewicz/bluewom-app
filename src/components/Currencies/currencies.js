@@ -17,7 +17,6 @@ const Alert = styled.div`
   padding: 100px 10px;
   text-align: center;
   font-size: 40px;
-  text-shadow: 0px 1px 1px var(--gray-dark);
   color: var(--main-blue);
   letter-spacing: 1px;
 `;

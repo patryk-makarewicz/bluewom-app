@@ -30,7 +30,6 @@ const Paragraph = styled.p`
   padding: 0 10px 40px 10px;
   text-align: center;
   font-size: 24px;
-  text-shadow: 0px 1px 1px var(--gray-dark);
   color: var(--main-blue);
 `;
 
