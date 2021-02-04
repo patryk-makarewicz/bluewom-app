@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     color: black;
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   :root {
