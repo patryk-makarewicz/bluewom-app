@@ -27,15 +27,9 @@ const Root = () => {
             <Route exact path="/">
               <StartView />
             </Route>
-          </Switch>
-
-          <Switch>
             <Route path="/currencies">
               <CurrenciesView />
             </Route>
-          </Switch>
-
-          <Switch>
             <Route path="/favorites">
               <FavoritesView />
             </Route>
